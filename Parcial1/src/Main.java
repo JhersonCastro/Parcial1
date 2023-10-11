@@ -7,17 +7,18 @@ public class Main {
         //Este for solo funciona cuando la longitud es par,
         //No cuando es impar, el parcial, especificamente dice que es par
         //1 - Llena el arreglo con al menos 10 datos diferentes. check;
-        for(int i = 0; i < arrEmpleados.length/2; i++){
+        for(int i = 0; i < arrEmpleados.length; i++){
+            if(i%2 == 0){
             arrEmpleados[i]  = new EmpleadoAsalariado
                     (Readers.readString("Dime el nombre del EmpleadoAsalariado : "), 
                     Readers.readDouble("Dime tu salario base"), 
                     Readers.readDouble("Dime tus deducciones"));
-        }
-        for(int i = arrEmpleados.length/2; i < arrEmpleados.length; i++){
-            arrEmpleados[i]  = new EmpleadoPorHoras
+            }else{
+                 arrEmpleados[i]  = new EmpleadoPorHoras
                                                 (Readers.readString("Dime el nombre del EmpleadoPorHoras : "),
                                                 Readers.readInt("Dime cuantas horas trabajo"),
                                                 Readers.readDouble("Cual es tu tarifa por hora?"));  
+            }
         }
         
         
