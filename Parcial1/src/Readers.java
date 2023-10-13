@@ -13,17 +13,23 @@ public class Readers {
     public static double readDouble(String label){
         Scanner scan = new Scanner(System.in);
         double rtn = 0; //Va a almacenar el valor del usuario si es double
+        boolean flag = true;
         
+        String validate;
+        System.out.println(label);
+        do{            
+            validate = scan.nextLine();
             try{
-                System.out.println(label);
-                rtn = scan.nextDouble();
-                return rtn;
-            }catch(Exception ex){
-                System.out.println("Solo escribe numeros! " + ex.getMessage());
+                rtn = Double.parseDouble(validate);
+                flag = false;
+            }catch(NumberFormatException ex){
+                System.out.println(ex.getMessage());
             }
-        return 0;
-        
+        }while(flag);
+       
+        return rtn;
     }
+
     public static int readInt(String label){
         Scanner scan = new Scanner(System.in);
         int rtn; //Va a almacenar el valor del usuario si es double
