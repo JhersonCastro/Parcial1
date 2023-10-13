@@ -3,7 +3,7 @@ public class Main {
     
     
     public static void main(String[] args) {
-        Empleado[] arrEmpleados = new Empleado[2];
+        Empleado[] arrEmpleados = new Empleado[10];
         //Este for solo funciona cuando la longitud es par,
         //No cuando es impar, el parcial, especificamente dice que es par
         //1 - Llena el arreglo con al menos 10 datos diferentes. check;
