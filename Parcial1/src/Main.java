@@ -54,41 +54,6 @@ public class Main {
         String nombreDelEmpleadoEnEspecifico = "Ana";
         System.out.println("\nObteniendo los datos de " + nombreDelEmpleadoEnEspecifico);
         System.out.println(arrEmpleados[getPositionEmpleadoByName(arrEmpleados,nombreDelEmpleadoEnEspecifico)]);
-
-        /*Codigo que necesitaba la interaccion del usuario:
-         /*Este bloque le preguntaba al usuario el nombre del empleado y mandaba su posicion
-        //Modificar a un objeto del arreglo
-        int opc = 0;
-        do{
-        System.out.println("Modificar el dato de un objeto en el array!");
-
-        int position = getPositionEmpleadoByName(arrEmpleados, Readers.readString("Dime el nombre del empleado"));
-        if(position != -1){
-            if(arrEmpleados[position].getClass().equals(EmpleadoAsalariado.class)){
-                EmpleadoAsalariado refEmpleado = (EmpleadoAsalariado) arrEmpleados[position];
-                switch(Readers.readInt("1- Modificar el Nombre 2-Modificar el salario base 3-salir")){
-                    case 1 -> refEmpleado.setNombre(Readers.readString("Ingresa el nuevo nombre"));
-                    case 2 -> refEmpleado.setSalarioBase(Readers.readDouble("Ingrese el nuevo salario base"));
-                    case 3 -> opc = 5;
-                }
-            }else{
-                EmpleadoPorHoras refEmpleado = (EmpleadoPorHoras) arrEmpleados[position];
-                switch(Readers.readInt("1- Modificar el Nombre 2-Modificar la tarifa por horas 3-Modificar las horas trabajadas 4-salir")){
-                    case 1 -> refEmpleado.setNombre(Readers.readString("Ingresa el nuevo nombre"));
-                    case 2 -> refEmpleado.setTarifaPorHora(Readers.readDouble("Cambiemos la tarifa por hora"));
-                    case 3 -> refEmpleado.setHorasTrabajadas(Readers.readInt("Cuantas horas trabajo, campeon?"));
-                    case 4 -> opc = 5;
-                }
-            }
-        }
-        }while(opc != 5);
-        /*Obtener un empleado en especifico por el nombre, he imprimo  sus datos
-        int pos;
-        do{
-        pos = getPositionEmpleadoByName(arrEmpleados, Readers.readString("Dime el nombre del empleado"));
-        if(pos != -1)
-            System.out.println("Datos del empleado en especifico: " + arrEmpleados[pos].toString());
-        }while(pos != -1);*/
     }
     private static int getPositionEmpleadoByName(Empleado[] arrEmpleados, String nombre){
         //En este ejemplo todos los empleados tendrán nombres unicos, sino, solo se va a escoger el primer empleado con ese nombre
