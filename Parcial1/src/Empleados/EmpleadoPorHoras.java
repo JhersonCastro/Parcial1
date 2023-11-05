@@ -28,14 +28,13 @@ public class EmpleadoPorHoras extends Empleado{
    
     @Override
     public double calcularSalario() {
-        return tarifaPorHora*horasTrabajadas;
+        return Math.round((tarifaPorHora*horasTrabajadas)*100)/100;
     }
     @Override
     public String toString() {
         return "Nombre del Empleado que trabaja por horas: "+ nombre
                 + "\nSu precio por hora equivale a: " + tarifaPorHora
-                + "\nY las horas que ha trabajado son: " + horasTrabajadas
-                + "\nDando como resultado un salario de: " + calcularSalario();
-    }
-    
+                + " COP\nY las horas que ha trabajado son: " + horasTrabajadas
+                + " COP\nDando como resultado un salario de: " + calcularSalario()+ " COP";
+    }    
 }
