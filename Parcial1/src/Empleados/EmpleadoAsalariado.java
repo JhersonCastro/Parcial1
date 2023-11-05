@@ -12,8 +12,8 @@ public class EmpleadoAsalariado extends Empleado{
     private final double deducciones;
 
     public EmpleadoAsalariado(String nombre, double salarioBase, double deducciones) {
-        super(nombre, salarioBase);
-        this.deducciones = deducciones;
+        super(nombre, Math.round(salarioBase * 100.0) / 100.0);
+        this.deducciones = Math.round(deducciones * 100.0) / 100.0;
     }
    
     
@@ -24,12 +24,10 @@ public class EmpleadoAsalariado extends Empleado{
 
     @Override
     public String toString() {
-        String label =
-                "Nombre del EmpleadoAsalariado"+ nombre 
-                + "\nCon un salario Base de: " + salarioBase 
-                + "COP\nY sus deducciones son de " + deducciones
-                + "El salario total queda en" + calcularSalario();
-        return label;
+        return "Nombre del EmpleadoAsalariado: "+ nombre
+                + "\nCon un salario Base de: " + salarioBase
+                + "COP\nY sus deducciones son de: " + deducciones
+                + "\nEl salario total queda en: " + calcularSalario();
     }
     
    
