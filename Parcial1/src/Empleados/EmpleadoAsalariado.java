@@ -19,16 +19,15 @@ public class EmpleadoAsalariado extends Empleado{
     
     @Override
     public double calcularSalario() {
-        return salarioBase - deducciones;
+        return Math.round((salarioBase - deducciones) * 100.0) / 100.0;
     }
 
     @Override
     public String toString() {
         return "Nombre del EmpleadoAsalariado: "+ nombre
                 + "\nCon un salario Base de: " + salarioBase
-                + "COP\nY sus deducciones son de: " + deducciones
-                + "\nEl salario total queda en: " + calcularSalario();
-    }
-    
-   
+                + " COP\nY sus deducciones son de: " + deducciones
+                + " COP\nEl salario total queda en: " + calcularSalario() + " COP";
+    }   
 }
+
